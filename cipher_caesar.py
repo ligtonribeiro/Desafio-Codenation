@@ -1,7 +1,8 @@
 import json, requests, hashlib
+from decouple import config
 
 # Consumindo a API, salvando reposta em arquivo JSON e deserializado JSON
-url = "https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token=57b8d8c5faf6f2dd86613eedf7ae8aca34bb290f"
+url = "https://api.codenation.dev/v1/challenge/dev-ps/generate-data?token="+config('TOKEN')
 r = requests.get(url)
 response_json = r.json()
 
