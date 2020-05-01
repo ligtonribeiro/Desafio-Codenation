@@ -37,8 +37,8 @@ with open('answer.json', 'w') as atualizar_cifrado_json:
 
 # SHA1
 resumo_decifrado = dados['decifrado']
-resumo_cripografico = hashlib.sha1(resumo_decifrado.encode('utf-8')).hexdigest()
-dados['resumo_cripografico'] = resumo_cripografico
+resumo_criptografico = hashlib.sha1(resumo_decifrado.encode('utf-8')).hexdigest()
+dados['resumo_criptografico'] = resumo_criptografico
 
 with open('answer.json', 'w') as atualizar_resumo_json:
     json.dump(dados, atualizar_resumo_json, indent=4)
