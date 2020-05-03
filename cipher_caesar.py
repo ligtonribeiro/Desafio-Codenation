@@ -43,8 +43,8 @@ gerarJSON('answer.json', dados)
 files = [('answer', open('answer.json', 'rb'))]
 headers = {}
 response = requests.post(url_post, headers=headers, files=files)
-r = response.text
-nota = json.loads(r)
+resp = response.text
+nota = json.loads(resp)
 
 print("Texto Cifrado: ", cifrado)
 print("Texto Decifrado: ", decifrado)
