@@ -12,8 +12,8 @@ r = requests.get(url_get)
 response_json = r.json()
 
 # Salvando resposta da API em um arquivo JSON / Realizando deserialização
-gerarJSON('answer.json', response_json)
-dados = deserializeJSON('answer.json')
+gerar_json('answer.json', response_json)
+dados = deserialize_json('answer.json')
 
 # Descriptografando o texto.
 cifrado = dados['cifrado']
@@ -31,13 +31,13 @@ for letra in cifrado:
 
 # Atualizando arquivo JSON
 dados['decifrado'] = decifrado
-gerarJSON('answer.json', dados)
+gerar_json('answer.json', dados)
 
 # SHA1
 decifrado = dados['decifrado']
 resumo_criptografico = hashlib.sha1(decifrado.encode('utf-8')).hexdigest()
 dados['resumo_criptografico'] = resumo_criptografico
-gerarJSON('answer.json', dados)
+gerar_json('answer.json', dados)
 
 # Enviando arquivo JSON
 files = [('answer', open('answer.json', 'rb'))]
