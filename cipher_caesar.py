@@ -43,8 +43,9 @@ gerarJSON('answer.json', dados)
 files = [('answer', open('answer.json', 'rb'))]
 headers = {}
 response = requests.post(url_post, headers=headers, files=files)
-nota = response.text
+r = response.text
+nota = json.loads(r)
 
 print("Texto Cifrado: ", cifrado)
 print("Texto Decifrado: ", decifrado)
-print("Pontução do desafio: ", nota)
+print("Pontução do desafio: ", nota['score'])
