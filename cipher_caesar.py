@@ -48,8 +48,4 @@ nota = json.loads(resp)
 
 print("Texto Cifrado: ", cifrado)
 print("Texto Decifrado: ", decifrado)
-<<<<<<< HEAD
 print("Pontução do desafio: ", nota['score'])
-=======
-print("Pontução do desafio: ", nota)
->>>>>>> e5d900d35f16cd29c2d2a572dab25dd7fa364ffb
